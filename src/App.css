@@ -2,20 +2,29 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 body {
-  background: url(../public/img/Rectangle\ 4.png);
+  background-image: url(../public/img/Rectangle\ 4.png);
   background-size: cover;
-  /* filter: brightness(300%); */
-  /* linear-gradient(
-    90deg,
-    rgba(48, 16, 255, 1) 0%,
-    rgba(100, 115, 255, 1) 100%
-  ); */
 }
+
+body::-webkit-scrollbar {
+  background-image: url(../public/img/Rectangle\ 4.png);
+  width: 15px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #5b6561;
+  border-radius: 10px;
+  border: 1px solid #787c84;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #8a8c76;
+}
+
 .todo-app {
   display: flex;
   flex-direction: column;
@@ -46,9 +55,9 @@ h1 {
 .todo-input {
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
-  border: 2px solid rgba(17, 122, 255, 1);
+  border: 2px solid #787c84;
   outline: none;
-  width: 320px;
+  max-width: 320px;
 }
 
 .todo-button {
@@ -57,11 +66,7 @@ h1 {
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   outline: none;
-  background: linear-gradient(
-    90deg,
-    rgba(17, 122, 255, 1) 0%,
-    rgba(20, 159, 255, 1) 100%
-  );
+  background: #787c84;
   color: white;
   text-transform: capitalize;
 }
@@ -77,11 +82,12 @@ h1 {
   align-items: center;
   margin: 4px auto;
   color: white;
-  background: linear-gradient(
+  background: #f6f5f2;
+  /* linear-gradient(
     90deg,
-    rgba(20, 159, 255, 1) 0%,
-    rgba(17, 122, 255, 1) 100%
-  );
+    rgba(216, 218, 231, 1) 0%,
+    rgba(162, 168, 193, 1) 100%
+  ); */
   padding: 16px;
   border-radius: 5px;
   width: 90%;
