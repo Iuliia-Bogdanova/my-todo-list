@@ -16,11 +16,16 @@ function App() {
     }
   };
   console.log(todos);
-  const removeTask = () => {
-
+  const removeTask = (id) => {
+    setTodos([...todos.filter((todo) => todo.id !== id)])
   };
-const toggleTask = () => {
 
+  const toggleTask = (id) => {
+    setTodos([
+      ...todos.map((todo) => 
+      todo.id === id ? {...todo, completed: !todo.completed} : {...todo}
+      ),
+    ]);
 };
   return (
     <div className="todo-app">

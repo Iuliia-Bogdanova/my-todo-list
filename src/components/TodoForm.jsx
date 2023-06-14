@@ -12,6 +12,7 @@ const TodoForm = ({addTask}) => {
     }
 
     return (
+        
         <form className="todo-form" onSubmit={handleSubmit}>
             <input 
                 type="text" 

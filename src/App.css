@@ -40,7 +40,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 h1 {
   color: #19444A;
-  margin: 32px 0;
+  margin: 32px auto;
   font-size: 33px;
 }
 
@@ -49,15 +49,18 @@ h1 {
 }
 
 .todo-form {
-  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto 32px auto;
 }
 
 .todo-input {
+  width: 100%;
   padding: 14px 32px 14px 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid #787c84;
   outline: none;
-  max-width: 320px;
 }
 
 .todo-button {
@@ -80,14 +83,9 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4px auto;
-  color: white;
+  margin: 10px auto;
+  color: #787c84;
   background: #f6f5f2;
-  /* linear-gradient(
-    90deg,
-    rgba(216, 218, 231, 1) 0%,
-    rgba(162, 168, 193, 1) 100%
-  ); */
   padding: 16px;
   border-radius: 5px;
   width: 90%;
@@ -106,4 +104,36 @@ h1 {
   align-self: center;
   background-color: #8A8C76;
   border: none;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 426px) {
+  .todo-app {
+    width: 70%;
+    margin: 100px auto;
+  }
+  h1 {
+    margin: 26px auto;
+    font-size: 30px;
+  }
+  .todo-form {
+    margin: 0 auto 26px auto;
+  }
+}
+
+@media (max-width: 321px) {
+  .todo-app {
+    width: 80%;
+    margin: 80px auto;
+  }
+  h1 {
+    margin: 20px auto;
+    font-size: 28px;
+  }
+  .todo-form {
+    margin: 0 auto 20px auto;
+  }
+  .separator {
+    margin-bottom: 20px;
+  }
 }
