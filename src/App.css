@@ -6,12 +6,12 @@
 }
 
 body {
-  background-image: url(../public/img/Rectangle\ 4.png);
+  background-image: url(../public/img/4.png);
   background-size: cover;
 }
 
 body::-webkit-scrollbar {
-  background-image: url(../public/img/Rectangle\ 4.png);
+  background-image: url(../public/img/4.png);
   width: 15px;
 }
 

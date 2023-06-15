@@ -13,14 +13,14 @@ const TodoForm = ({addTask}) => {
 
     return (
         <form className="todo-form" onSubmit={handleSubmit}>
-            <input 
-                type="text" 
-                placeholder="Add a new task..." 
-                onChange={handleChange} 
-                value={userInput} 
-                className="todo-input"
+            <input
+            type="text"
+            placeholder="What I need to do..."
+            onChange={handleChange}
+            value={userInput}
+            className="todo-input"
             />
-            <button className="todo-button">Save</button>
+            <button className="todo-button">OK</button>
         </form>
     );
 };
