@@ -57,7 +57,7 @@ h1 {
 
 .todo-input {
   width: 100%;
-  padding: 14px 32px 14px 16px;
+  padding: 14px 16px;
   border-radius: 4px 0 0 4px;
   border: 2px solid #787c84;
   outline: none;
@@ -118,6 +118,9 @@ h1 {
   }
   .todo-form {
     margin: 0 auto 26px auto;
+  }
+  .todo-input {
+      padding-inline: 10px;
   }
 }
 
