@@ -2,5 +2,7 @@ My ToDo List - приложение на ReactJS, мобильная и деск
 Записанная задача сохраняется в local storage.  
 Выполненную задачу можно зачеркнуть кликом на поле с данной задачей, или восстановить повторным кликом. Из local storage зачеркнутая задача не удаляется.  
 Полностью удалить задачу из списка и local storage можно кнопкой CloseCircle.  
-iuliia-todo-react.netlify.app/
+
+https://iuliia-todo-react.netlify.app/
+
 
