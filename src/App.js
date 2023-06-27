@@ -1,10 +1,22 @@
-import { useState } from "react";
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoItem from "./components/TodoItem";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const savedTodos = localStorage.getItem("todos");
+    if (savedTodos) {
+      return JSON.parse(savedTodos);
+    } else {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
   const addTask = (userInput) => {
     if (userInput) {
       const newTask = {
@@ -15,31 +27,32 @@ function App() {
       setTodos([...todos, newTask]);
     }
   };
-  console.log(todos);
+
   const removeTask = (id) => {
-    setTodos([...todos.filter((todo) => todo.id !== id)])
+    setTodos([...todos.filter((todo) => todo.id !== id)]);
   };
 
   const toggleTask = (id) => {
     setTodos([
-      ...todos.map((todo) => 
-      todo.id === id ? {...todo, completed: !todo.completed} : {...todo}
+      ...todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : { ...todo }
       ),
     ]);
-};
+  };
+
   return (
     <div className="todo-app">
-        <h1>My ToDo List</h1>
-        <TodoForm addTask={addTask} />
-        <hr className="separator" />
-        {todos.map((todo) => (
-          <TodoItem 
-            todo={todo} 
-            key={todo.id} 
-            removeTask={removeTask} 
-            toggleTask={toggleTask} 
-          />
-        ))}
+      <h1>My ToDo List</h1>
+      <TodoForm addTask={addTask} />
+      <hr className="separator" />
+      {todos.map((todo) => (
+        <TodoItem
+          todo={todo}
+          key={todo.id}
+          removeTask={removeTask}
+          toggleTask={toggleTask}
+        />
+      ))}
     </div>
   );
 }
