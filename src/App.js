@@ -24,7 +24,7 @@ function App() {
         task: userInput,
         completed: false,
       };
-      setTodos([...todos, newTask]);
+      setTodos([newTask, ...todos]);
     }
   };
 
